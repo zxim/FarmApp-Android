@@ -1,0 +1,6 @@
+0 strawberry 딸기 fresh
+1 strawberry 딸기 normal
+2 strawberry 딸기 rotten
+3 koreamelon 참외 fresh
+4 koreamelon 참외 normal
+5 koreamelon 참외 rotten

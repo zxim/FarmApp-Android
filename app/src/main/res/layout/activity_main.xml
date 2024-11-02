@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/representColor"
+        app:titleTextColor="@color/white">
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/representColor"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:id="@+id/logo"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"/>
+
+        <FrameLayout
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right">
+            <ImageButton
+                android:id="@+id/login"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@color/representColor"
+                android:scaleType="fitCenter"
+                android:visibility="visible"
+                android:src="@drawable/login" />
+
+            <ImageButton
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/user"
+                android:scaleType="fitCenter"
+                android:background="@color/representColor"
+                android:id="@+id/userBtn"
+                android:visibility="invisible"/>
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchFruit"
+        app:iconifiedByDefault="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        app:queryHint="검색어를 입력하시오"
+        android:background="@drawable/search">
+
+    </androidx.appcompat.widget.SearchView>
+
+    <ScrollView
+        android:id="@+id/Main_Scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/Camera_Button"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="#FFFFFF"
+                    android:src="@drawable/camera_button" />
+
+                <ImageButton
+                    android:id="@+id/gallery_button"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:background="#FFFFFF"
+                    android:src="@drawable/gallery_button" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="오늘의 추천과일"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <!--            GridView로 바꿔볼까-->
+            <GridLayout
+                android:id="@+id/fruit_list"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_columnSpan="2"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/basic_border"
+                android:columnCount="2"
+                android:padding="20dp"></GridLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/fruit_pager"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent">-->
+
+        <!--                &lt;!&ndash;카메라버튼&ndash;&gt;-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/Camera_Button"-->
+        <!--                    android:layout_width="180dp"-->
+        <!--                    android:layout_height="180dp"-->
+        <!--                    android:layout_marginStart="16dp"-->
+        <!--                    android:layout_marginTop="16dp"-->
+        <!--                    android:backgroundTint="@android:color/transparent"-->
+        <!--                    android:background="@drawable/home_button"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent"-->
+        <!--                    app:srcCompat="@drawable/camera_button" />-->
+
+        <!--                &lt;!&ndash;검색 버튼&ndash;&gt;-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/Search_Button"-->
+        <!--                    android:layout_width="180dp"-->
+        <!--                    android:layout_height="180dp"-->
+        <!--                    android:layout_marginTop="16dp"-->
+        <!--                    android:layout_marginEnd="16dp"-->
+        <!--                    android:backgroundTint="@android:color/transparent"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent"-->
+        <!--                    app:srcCompat="@drawable/search_button" />-->
+
+        <!--                &lt;!&ndash;과일효능 버튼&ndash;&gt;-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/efficacy_button"-->
+        <!--                    android:layout_width="180dp"-->
+        <!--                    android:layout_height="180dp"-->
+        <!--                    android:layout_marginStart="16dp"-->
+        <!--                    android:layout_marginTop="16dp"-->
+        <!--                    android:backgroundTint="@android:color/transparent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/Camera_Button"-->
+        <!--                    app:srcCompat="@drawable/efficacy_button" />-->
+
+        <!--                &lt;!&ndash;과일 구매 버튼&ndash;&gt;-->
+
+        <!--                &lt;!&ndash;영양 성분 버튼&ndash;&gt;-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/store_button"-->
+        <!--                    android:layout_width="180dp"-->
+        <!--                    android:layout_height="180dp"-->
+        <!--                    android:layout_marginTop="16dp"-->
+        <!--                    android:layout_marginEnd="16dp"-->
+        <!--                    android:backgroundTint="@android:color/transparent"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/Search_Button"-->
+        <!--                    app:srcCompat="@drawable/store_button" />-->
+
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/stats_button"-->
+        <!--                    android:layout_width="180dp"-->
+        <!--                    android:layout_height="180dp"-->
+        <!--                    android:layout_marginStart="16dp"-->
+        <!--                    android:layout_marginTop="16dp"-->
+        <!--                    android:backgroundTint="@android:color/transparent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/efficacy_button"-->
+        <!--                    app:srcCompat="@drawable/stats_button" />-->
+
+        <!--                &lt;!&ndash;갤러리 버튼&ndash;&gt;-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/gallery_button"-->
+        <!--                    android:layout_width="180dp"-->
+        <!--                    android:layout_height="180dp"-->
+        <!--                    android:layout_marginTop="16dp"-->
+        <!--                    android:layout_marginEnd="16dp"-->
+        <!--                    android:backgroundTint="@android:color/transparent"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/store_button"-->
+        <!--                    app:srcCompat="@drawable/gallery_button" />-->
+
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    </ScrollView>
+
+</LinearLayout>
